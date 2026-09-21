@@ -2,6 +2,10 @@
 
 Ein kleines Glücksrad für Kevin: Es entscheidet zufällig zwischen **der**, **die** und **das**.
 
+## Live
+
+https://vxy-bash.github.io/kevinomat-ich-glaube-diese-funktioniert/
+
 ## Start
 
 `index.html` doppelklicken oder den Ordner mit einem lokalen Webserver öffnen.
