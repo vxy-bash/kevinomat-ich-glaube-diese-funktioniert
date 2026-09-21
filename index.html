@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kevinomat — Ich glaube diese funktioniert</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="orb orb-one"></div><div class="orb orb-two"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✦</span><span>Kevinomat</span></div>
+      <div class="tagline">Ich glaube diese funktioniert</div>
+      <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="true">🔊 Sounds an</button>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">Das Orakel der deutschen Grammatik</div>
+      <h1>Welcher Artikel<br><span>will es sein?</span></h1>
+      <p class="intro">Kevin will gamblen. Das Rad entscheidet. Der, die oder das — keine Verantwortung, nur Schicksal.</p>
+    </section>
+
+    <section class="game-grid">
+      <div class="wheel-stage">
+        <div class="pointer" aria-hidden="true">▼</div>
+        <div class="wheel-wrap">
+          <div class="wheel" id="wheel" aria-label="Glücksrad mit den Optionen der, die und das">
+            <div class="wheel-label label-der">DER</div>
+            <div class="wheel-label label-die">DIE</div>
+            <div class="wheel-label label-das">DAS</div>
+            <div class="wheel-center">?</div>
+          </div>
+          <div class="wheel-shadow"></div>
+        </div>
+        <div class="wheel-caption"><span class="live-dot"></span> Bereit für völlig seriöse Wissenschaft</div>
+      </div>
+
+      <aside class="control-panel">
+        <div class="panel-note">Kevin, drück halt</div>
+        <button class="spin-button" id="spinButton" type="button">
+          <span class="spin-icon">⟳</span><span>GAMBLE!</span>
+        </button>
+        <div class="result-card" id="resultCard" aria-live="polite">
+          <div class="result-kicker">Das Urteil lautet …</div>
+          <div class="result-word" id="resultWord">???</div>
+          <div class="result-sub" id="resultSub">Noch ist alles möglich.</div>
+        </div>
+        <button class="tiny-button" id="chaosButton" type="button">🎲 Mehr Chaos</button>
+      </aside>
+    </section>
+
+    <section class="history-section">
+      <div class="section-heading"><span>Letzte Schicksale</span><button id="clearHistory" type="button">Verlauf leeren</button></div>
+      <div class="history-list" id="historyList"><div class="empty-history">Noch kein Drama protokolliert.</div></div>
+    </section>
+
+    <footer><span>100 % zufällig*</span><span>*gefühlt</span><span>gebaut für Kevin</span></footer>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+  <script src="app.js"></script>
+</body>
+</html>
