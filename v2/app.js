@@ -165,7 +165,7 @@ function spin() {
 
 spinButton.addEventListener('click', spin);
 document.addEventListener('keydown', event => {
-  if (event.code !== 'Space' || event.repeat || /BUTTON|SELECT|INPUT|TEXTAREA|A/.test(event.target.tagName) || event.target.isContentEditable) return;
+  if (event.code !== 'Space' || event.repeat || ['BUTTON','SELECT','INPUT','TEXTAREA','A'].includes(event.target.tagName) || event.target.isContentEditable) return;
   event.preventDefault();
   spin();
 });
