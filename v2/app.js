@@ -149,11 +149,11 @@ function spin(forcedArticle = null) {
   $('result').textContent = '…'; $('result').style.color = 'var(--purple)';
   $('quip').textContent = 'Kevin haben Kontrolle abgegeben.';
   $('stageText').textContent = 'Anschnallen. Artikel fliegen bald.';
-  const duration = reducedMotion.matches ? 1 : 5600;
+  const duration = 5600;
   const from = angle;
   const targetSegments = forcedArticle ? [0,3,6,9].map(segment => segment + articles.indexOf(forcedArticle)) : null;
   const target = targetSegments ? targetSegments[randomInt(targetSegments.length)] : randomInt(12);
-  const to = destination(from,target,reducedMotion.matches ? 0 : 8,randomInt(17)-8);
+  const to = destination(from,target,8,randomInt(17)-8);
   let started, lastSegment = segmentAt(angle);
   tone(130,.25,0,'sine',520,.08);
   function frame(now) {
