@@ -1,0 +1,42 @@
+:root {
+  --ink: #f7f2ff;
+  --muted: #a9a0bc;
+  --cream: #12101b;
+  --panel: #1d192b;
+  --pink: #ff5c84;
+  --yellow: #ffd35a;
+  --blue: #6dd5ed;
+  --purple: #a987ff;
+  --line: rgba(247, 242, 255, .16);
+}
+
+body { background: #12101b; }
+.orb-one { opacity: .16; }
+.orb-two { opacity: .12; }
+.sound-toggle:hover, .tiny-button:hover, .section-heading button:hover { background: var(--panel); }
+.control-panel, .history-chip { background: var(--panel); }
+.wheel-center { border-color: var(--panel); }
+
+body.is-spinning .pointer {
+  animation: pointerJiggle .14s linear infinite;
+}
+
+body.is-spinning .wheel-center {
+  animation: centerPulse .22s ease-in-out infinite alternate;
+}
+
+body.is-spinning .spin-icon {
+  animation: iconSpin .45s linear infinite;
+}
+
+@keyframes pointerJiggle {
+  0%, 100% { transform: translateX(-50%) rotate(-7deg); }
+  50% { transform: translateX(-50%) rotate(7deg); }
+}
+
+@keyframes centerPulse {
+  from { transform: translate(-50%, -50%) scale(.94) rotate(-5deg); }
+  to { transform: translate(-50%, -50%) scale(1.06) rotate(5deg); }
+}
+
+@keyframes iconSpin { to { transform: rotate(360deg); } }

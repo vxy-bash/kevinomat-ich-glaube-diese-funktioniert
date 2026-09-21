@@ -87,6 +87,7 @@ function addHistory(outcome) {
 function spin() {
   if (spinning) return;
   spinning = true;
+  document.body.classList.add('is-spinning');
   spinButton.disabled = true;
   ensureAudio();
   resultWord.textContent = '???';
@@ -94,14 +95,14 @@ function spin() {
   resultCard.style.transform = 'rotate(-2deg)';
   const outcomeIndex = Math.floor(Math.random() * outcomes.length);
   const target = outcomeIndex * 120 + 60;
-  rotation += 1440 + (360 - (rotation % 360)) + target;
+  rotation += 2160 + (360 - (rotation % 360)) + target;
   wheel.style.transform = `rotate(${rotation}deg)`;
   let ticks = 0;
   const tickTimer = window.setInterval(() => {
     playTick();
     ticks += 1;
-    if (ticks >= 18) window.clearInterval(tickTimer);
-  }, 170);
+    if (ticks >= 26) window.clearInterval(tickTimer);
+  }, 200);
   window.setTimeout(() => {
     const outcome = outcomes[outcomeIndex];
     resultWord.textContent = outcome.word;
@@ -110,13 +111,14 @@ function spin() {
     resultCard.style.transform = 'rotate(2deg) scale(1.03)';
     spinButton.disabled = false;
     spinning = false;
+    document.body.classList.remove('is-spinning');
     addHistory(outcome);
     playWin();
     burstConfetti(56);
     popEmoji();
     showToast(`${outcome.word} — Kevin akzeptiert sein Schicksal.`);
     window.setTimeout(() => resultCard.style.transform = '', 450);
-  }, 4200);
+  }, 5200);
 }
 
 spinButton.addEventListener('click', spin);

@@ -17,3 +17,4 @@ https://vxy-bash.github.io/kevinomat-ich-glaube-diese-funktioniert/
 - Konfetti, Emoji-Popups, Toasts und Chaos-Button
 - Verlauf der letzten Entscheidungen
 - responsive Darstellung und Unterstützung für reduzierte Bewegung
+- dunkles Theme mit sichtbarer Spin-Feedback-Animation
