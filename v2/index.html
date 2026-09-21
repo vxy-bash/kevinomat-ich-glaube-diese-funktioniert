@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151222">
+  <meta name="description" content="Kevinomat: Dreh das Rad und lass der, die oder das dein Schicksal entscheiden. Mit Sound und maximalem Quatsch.">
+  <title>Kevinomat (Ich glaube diese funktioniert)</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23bda1ff'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-size='46'%3E🎰%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css?v=2">
+  <script src="wheel.js?v=2" defer></script>
+  <script src="app.js?v=2" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <a class="brand" href="./" aria-label="Kevinomat Startseite"><span class="brand-icon">K.</span> Kevinomat <small>2.0</small></a>
+      <button id="sound" class="quiet" aria-pressed="true">♫ Sound an</button>
+    </header>
+    <section class="intro">
+      <p class="subtitle">Ich glaube diese funktioniert</p>
+      <h1>Grammatik ist<br>ein Glücksspiel.</h1>
+      <p>Der. Die. Das. Kevin, dein Schicksal hat zwölf Felder.</p>
+    </section>
+    <section class="machine" aria-label="Artikel-Glücksrad">
+      <div class="stage">
+        <div class="wheel-frame">
+          <div class="bulbs" aria-hidden="true"></div>
+          <div class="pointer" id="pointer" aria-hidden="true"></div>
+          <svg id="wheel" viewBox="0 0 500 500" role="img" aria-label="Drehendes Rad mit zwölf Feldern, je viermal der, die und das"></svg>
+          <div class="hub" aria-hidden="true"><span>✦</span><small>Kevin regelt</small></div>
+        </div>
+        <p class="stage-caption"><span id="statusDot"></span><span id="stageText">Das Rad wartet auf schlechte Entscheidungen.</span></p>
+      </div>
+      <div class="console">
+        <div class="ticket">
+          <p id="resultLabel">Dein nächster Artikel</p>
+          <div class="result" id="result" aria-live="polite" aria-atomic="true">Na?</div>
+          <p id="quip">Ein Klick. Drei Möglichkeiten. Null Gewähr.</p>
+          <div class="ticket-bottom"><span>Kein Geld. Nur Artikel.</span><span>🎟</span></div>
+        </div>
+        <button class="spin" id="spin"><span id="spinLabel">Dreh das Ding</span><span class="spin-arrow" aria-hidden="true">↻</span></button>
+        <div class="settings">
+          <label for="mode">Drehmodus</label>
+          <select id="mode"><option value="cinema">Großes Kino · 6 s</option><option value="quick">Kevin hat Stress · 2 s</option><option value="gentle">Sanft · 1,5 s</option></select>
+        </div>
+        <button class="chaos quiet" id="chaos">🦆 Unnötig viel Chaos</button>
+        <p class="keyboard">Oder drück <kbd>Leertaste</kbd></p>
+      </div>
+    </section>
+    <section class="history-section" aria-label="Bisherige Ergebnisse">
+      <div class="history-title"><h2>Kevins letzte Entscheidungen</h2><span id="count">0 Spins</span></div>
+      <ol id="history"><li class="empty">Hier könnte dein Artikel stehen.</li></ol>
+    </section>
+    <footer><span>Für Kevin. Gegen die Unentschlossenheit.</span><span>der / die / das · jeweils ⅓ Chance</span></footer>
+  </main>
+  <div id="effects" aria-hidden="true"></div>
+  <div id="toast" role="status"></div>
+</body>
+</html>
